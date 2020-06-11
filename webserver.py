@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from starlette.requests import Request
 from fastapi.responses import JSONResponse
-import subprocess
+import subprocess 
+import requests
+import json
 
 app = FastAPI()
 
@@ -56,4 +58,5 @@ async def post_string(request: Request):
         print(e)
 
     return JSONResponse(
-        content={"Container Response": output_final.decode("utf-8")})
+            content={"Container Response": output_final.decode("utf-8")})
+    
