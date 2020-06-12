@@ -18,7 +18,7 @@ async def post_string(request: Request):
     try:
         #Create and run Container with python 3.8
         client_awnser_container = subprocess.run(
-            "docker run python:3.7 python3 -c {0}".format(python_run_final),
+            "docker run python:3.7-slim python3 -c {0}".format(python_run_final),
             shell=True,
             capture_output=True)
 
